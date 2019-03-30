@@ -1,0 +1,124 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 90vh;
+  }
+  .exts{
+    width:204px;
+    display:flex;
+    justify-content: space-between;
+  }
+  .ext{
+    width:60px;
+    margin:0 10px;
+    height:30px;
+    background:#ddd;
+    border-top-left-radius:34px;
+    border-top-right-radius:34px;
+    border:3px solid #ddd;
+    border-bottom:0;
+    margin-bottom:-2px;
+  }
+  
+  .face {
+    border: 2px solid #ddd;
+    background: #eee;
+    height: 200px;
+    width: 200px;
+    border-radius: 14px;
+    transition: ease all 0.2s;
+  }
+  .eyes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+  }
+  .eye {
+    background: #999;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+  }
+  .eye .shine {
+    background: #fff;
+    border-radius: 50%;
+    margin-top: 2px;
+    margin-left: 1px;
+    height: 10px;
+    width: 10px;
+  }
+  .mouth {
+    height: 10px;
+    width: 50px;
+    background: #999;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 4px;
+  }
+  
+  .nose {
+    margin: 0 auto;
+    margin-top: 20px;
+    background: #999;
+    height: 19px;
+    width: 10px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .nose .child {
+    margin-top: 20px;
+    background: #eee;
+    height: 15px;
+    width: 8px;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .blush{
+    display:flex;
+    height:0;
+    justify-content: space-between;
+  }
+  .sblush{
+    display:none;
+    width:30px;
+    height:30px;
+    background: rgb(255, 192, 203,0.6);
+    border-radius:50%;
+    margin:0 20px;
+  }
+  .face:hover .eye .shine {
+    margin-top: 5px;
+    background: #eee;
+    height: 20px;
+    width: 20px;
+    transition: ease all 0.2s;
+  
+    margin-left: 0;
+  }
+  .face:hover .mouth {
+    transition: ease border-radius, width 0.2s;
+    height: 40px;
+    width: 40px;
+    background: #999;
+    margin-top: 10px;
+    border-radius: 50%;
+  }
+  .face:hover .mouth .child {
+    width: 40px;
+    height: 34px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: #eee;
+    margin: 0 auto;
+  }
+  
+  .face:hover .sblush{
+    display:block;
+    transition: ease all 0.2s;
+  }

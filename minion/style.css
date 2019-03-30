@@ -1,0 +1,226 @@
+.title {
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  font-family: monospace;
+}
+
+:root {
+  --size: 200px;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minion {
+  width: var(--size);
+  height: calc(var(--size) * 2 - calc(var(--size) / 7));
+  overflow: hidden;
+  border-top-left-radius: calc(var(--size) * 1.2);
+  border-top-right-radius: calc(var(--size) * 1.2);
+  border-bottom-left-radius: calc(var(--size) * 1.2);
+  border-bottom-right-radius: calc(var(--size) * 1.2);
+  transform: translatey(0px);
+  animation: floating 3s ease-in-out infinite;
+}
+
+.head {
+  width: var(--size);
+  height: calc(var(--size) / 1.6);
+  background: gold;
+  border-top-left-radius: calc(var(--size) * 0.5);
+  border-top-right-radius: calc(var(--size) * 0.5);
+}
+
+.head .child {
+  position: relative;
+}
+
+.head .wide {
+  width: var(--size);
+  background: #222;
+  height: calc(var(--size) / 7.1875);
+  position: absolute;
+  top: calc(var(--size) / 2.61363);
+  left: 0;
+  z-index: 1;
+}
+
+.head .eye {
+  width: calc(var(--size) / 1.5);
+  height: calc(var(--size) / 1.5);
+  border-radius: 50%;
+  background: #ddd;
+  position: absolute;
+  z-index: 3;
+  top: calc(var(--size) / 8);
+  left: calc(var(--size) / 6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye .c1 {
+  height: calc(var(--size) / 2);
+  width: calc(var(--size) / 2);
+  background: gold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.eye .c2 {
+  height: calc(var(--size) / 4.5);
+  width: calc(var(--size) / 2);
+  background: #fff;
+  border-bottom-left-radius: calc(var(--size) / 4);
+  border-bottom-right-radius: calc(var(--size) / 4);
+  border: 5px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.eye .c4 {
+  position: absolute;
+  top: calc(var(--size) / -4);
+  left: 0;
+  height: calc(var(--size) / 2);
+  width: calc(var(--size) / 2);
+  background: inherit;
+  /* animation: blink 1s linear infinite; */
+  animation: blink 6s infinite forwards;
+}
+
+.eye .c3 {
+  height: calc(var(--size) / 8);
+  width: calc(var(--size) / 4);
+  background: #333;
+  border-bottom-left-radius: calc(var(--size) / 2);
+  border-bottom-right-radius: calc(var(--size) / 2);
+  border: 5px solid #333;
+  margin-top: calc(var(--size) / -36);
+}
+
+.body {
+  width: 100%;
+  background: gold;
+  height: calc(var(--size) * 0.8);
+  position: relative;
+}
+
+.body .top {
+  display: flex;
+  justify-content: space-around;
+}
+
+.body .top .left,
+.body .top .right {
+  height: var(--size);
+  background: #1560bd;
+  width: calc(var(--size) / 7.1875);
+}
+
+.body .top .left {
+  transform: rotate(-40deg);
+}
+
+.body .top .right {
+  transform: rotate(40deg);
+}
+
+.body .center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.body .center .part {
+  background: #1560bd;
+  width: calc(var(--size) / 2);
+  height: calc(var(--size) / 2);
+  position: absolute;
+  top: calc(var(--size) / -2);
+  z-index: 3;
+}
+
+.body .bottom {
+  background: #1560bd;
+  width: var(--size);
+  height: calc(var(--size) / 2);
+  margin-top: calc(var(--size) / -4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: calc(var(--size) * 1.2);
+  border-bottom-right-radius: calc(var(--size) * 1.2);
+}
+
+.body .bottom .part {
+  height: calc(var(--size) / 3);
+  width: calc(var(--size) / 3);
+  margin-top: calc(var(--size) / -2);
+  background: #195bac;
+  z-index: 4;
+
+  border-bottom-left-radius: calc(var(--size) * 0.09);
+  border-bottom-right-radius: calc(var(--size) * 0.09);
+}
+
+@keyframes blink {
+  0% {
+    top: calc(var(--size) / -4);
+  }
+
+  5% {
+    top: calc(var(--size) / -3);
+  }
+
+  15% {
+    top: calc(var(--size) / -2);
+  }
+
+  15% {
+    top: 0;
+  }
+
+  20% {
+    top: calc(var(--size) / -4);
+  }
+
+  25% {
+    top: calc(var(--size) / -4);
+  }
+
+  50% {
+    top: calc(var(--size) / -4);
+  }
+
+  100% {
+    top: calc(var(--size) / -4);
+  }
+}
+
+@keyframes floating {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
